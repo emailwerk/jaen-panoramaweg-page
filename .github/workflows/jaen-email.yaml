@@ -38,7 +38,7 @@ jobs:
           # Required recipients' addresses:
           to: kleberbaum@erebos.xyz, contact@aichner-christian.com
           # Required sender full name (address can be skipped):
-          from: ${{github.event.client_payload.form_first_name + " " + github.event.client_payload.form_last_name + " " + "<noreply@snek.at>"}} # <user@example.com>
+          from: ${{github.event.client_payload.form_first_name}} ${{github.event.client_payload.form_last_name}} <noreply@snek.at> # <user@example.com>
           # Optional whether this connection use TLS (default is true if server_port is 465)
           #secure: true
           # Optional plain body:

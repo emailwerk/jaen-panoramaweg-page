@@ -9,7 +9,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 //   data = fs.readFileSync('attachments/' + filename)
 
 const msg = {
-  to: 'kleberbaum@erebos.xyz',
+  to: 'noreply.snek.at@gmail.com',
   from: 'inspiremedia-fwd@outlook.com',
   subject: 'Hello world',
   text: 'Hello plain world!',

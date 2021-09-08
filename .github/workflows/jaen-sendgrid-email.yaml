@@ -21,10 +21,9 @@ jobs:
 
     # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idsteps
     steps:
-      - name: SendGrid Action
-        uses: raynigon/sendgrid-mail-action@v1.0.2
-        with:
-          sendgrid-token: ${{secrets.SENDGRID_API_KEY}}
-          to: kleberbaum@erebos.xyz, contact@aichner-christian.com
-          from: inspiremedia-fwd@outlook.com
-          html: <p><img src='https://topimmo.aichner.cloud/media/images/logo_topimmo.original.jpg' alt='Logo'></p><h1>Kundenanfrage ${{github.event.client_payload.subject}} </h1><p><b>Projekt:</b> ${{github.event.client_payload.from_project_link}} </p><p><b>Kunde:</b> ${{github.event.client_payload.form_first_name}} ${{github.event.client_payload.form_last_name}} </p> <p><b>Kontakt E-Mail:</b> ${{github.event.client_payload.from_email}} </p><p><b>Kontakt Telefon-Nr.:</b> ${{github.event.client_payload.form_telephone}} </p><p><b>Nachricht:</b></p><p> ${{github.event.client_payload.html_message}} </p>
+      - name: SendGrid
+        uses: peter-evans/sendgrid-action@v1
+        env:
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+          SCRIPT_FILEPATH: ../../sendgrid.js
+          PAYLOAD: ${{github.event.client_payload}}

@@ -35,7 +35,7 @@ jobs:
           LAST_NAME: ${{ github.event.client_payload.form_last_name }}
           TELEPHONE: ${{ github.event.client_payload.form_telephone }}
           EMAIL: ${{ github.event.client_payload.from_email }}
-          SUBJECT: ${{ github.event.client_payload.subject }} ${{github.event.client_payload.form_last_name}} ${{ github.event.client_payload.form_first_name }}
+          SUBJECT: ${{ github.event.client_payload.subject }} ${{ github.event.client_payload.form_first_name }} ${{github.event.client_payload.form_last_name}}
           MESSAGE: ${{ github.event.client_payload.html_message }}
           PROJECT_LINK: ${{ github.event.client_payload.from_project_link }}
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}

@@ -5,12 +5,12 @@
 # in the LICENSE file at https://snek.at/license
 
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions#name
-name: Jaen SendGrid
+name: Jaen Email
 
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions#on
 on:
   repository_dispatch:
-    types: [send_mail]
+    types: ['send_email']
 
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobs
 jobs:
@@ -21,14 +21,12 @@ jobs:
 
     # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idsteps
     steps:
-      - name: SendGrid
-        uses: peter-evans/sendgrid-action@v1
-        env:
-          FIRST_NAME: ${{ github.event.client_payload.form_first_name }}
-          LAST_NAME: ${{ github.event.client_payload.form_last_name }}
-          TELEPHONE: ${{ github.event.client_payload.form_telephone }}
-          EMAIL: ${{ github.event.client_payload.subject }}
-          SUBJECT: ${{ github.event.client_payload.from_email }}
-          MESSAGE: ${{ github.event.client_payload.html_message }}
-          PROJECT_LINK: ${{ github.event.client_payload.from_project_link }}
-          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+      - name: Jaen SendGrid Action
+        uses: mmeisels/action-send-an-email-@v1
+          with:
+            sendgrid-token: 'sample'
+            emailToAddress: kleberbaum@erebos.xyz, contact@aichner-christian.com
+            emailFromAddress:
+            emailBody: <p><img src='https://topimmo.aichner.cloud/media/images/logo_topimmo.original.jpg' alt='Logo'></p><h1>Kundenanfrage ${{github.event.client_payload.subject}}</h1><p><b>Projekt:</b> ${{github.event.client_payload.from_project_link}}</p><p><b>Kunde:</b> ${{github.event.client_payload.form_first_name}} ${{github.event.client_payload.form_last_name}}</p><p><b>Kontakt E-Mail:</b> ${{github.event.client_payload.from_email}}</p><p><b>Kontakt Telefon-Nr.:</b> ${{github.event.client_payload.form_telephone}}</p><p><b>Nachricht:</b></p><p> ${{github.event.client_payload.message.html_message}} </p>
+          env:
+            SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}

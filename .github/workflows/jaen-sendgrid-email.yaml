@@ -32,3 +32,4 @@ jobs:
           MESSAGE: ${{ github.event.client_payload.html_message }}
           PROJECT_LINK: ${{ github.event.client_payload.from_project_link }}
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+          SCRIPT_FILEPATH: '../sendgrid.js'

@@ -23,10 +23,10 @@ jobs:
     steps:
       - name: Jaen SendGrid Action
         uses: mmeisels/action-send-an-email-@v1
-          with:
-            sendgrid-token: 'sample'
-            emailToAddress: kleberbaum@erebos.xyz, contact@aichner-christian.com
-            emailFromAddress:
-            emailBody: <p><img src='https://topimmo.aichner.cloud/media/images/logo_topimmo.original.jpg' alt='Logo'></p><h1>Kundenanfrage ${{github.event.client_payload.subject}}</h1><p><b>Projekt:</b> ${{github.event.client_payload.from_project_link}}</p><p><b>Kunde:</b> ${{github.event.client_payload.form_first_name}} ${{github.event.client_payload.form_last_name}}</p><p><b>Kontakt E-Mail:</b> ${{github.event.client_payload.from_email}}</p><p><b>Kontakt Telefon-Nr.:</b> ${{github.event.client_payload.form_telephone}}</p><p><b>Nachricht:</b></p><p> ${{github.event.client_payload.message.html_message}} </p>
-          env:
-            SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+        with:
+          sendgrid-token: 'sample'
+          emailToAddress: kleberbaum@erebos.xyz, contact@aichner-christian.com
+          emailFromAddress:
+          emailBody: <p><img src='https://topimmo.aichner.cloud/media/images/logo_topimmo.original.jpg' alt='Logo'></p><h1>Kundenanfrage ${{github.event.client_payload.subject}}</h1><p><b>Projekt:</b> ${{github.event.client_payload.from_project_link}}</p><p><b>Kunde:</b> ${{github.event.client_payload.form_first_name}} ${{github.event.client_payload.form_last_name}}</p><p><b>Kontakt E-Mail:</b> ${{github.event.client_payload.from_email}}</p><p><b>Kontakt Telefon-Nr.:</b> ${{github.event.client_payload.form_telephone}}</p><p><b>Nachricht:</b></p><p> ${{github.event.client_payload.message.html_message}} </p>
+        env:
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}

@@ -10,7 +10,7 @@ name: Jaen Email
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions#on
 on:
   repository_dispatch:
-    types: [send_mail]
+    types: []
 
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobs
 jobs:

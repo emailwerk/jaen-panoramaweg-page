@@ -5,7 +5,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 const msg = {
   to: 'kleberbaum@erebos.xyz',
-  from: 'inspiremedia-fwd@outlook.com',
+  from: 'noreply@inspiremedia.at',
   subject: 'Hello world',
   text: 'Hello plain world!',
   html: `<p><img src='https://topimmo.aichner.cloud/media/images/logo_topimmo.original.jpg' alt='Logo'></p> 

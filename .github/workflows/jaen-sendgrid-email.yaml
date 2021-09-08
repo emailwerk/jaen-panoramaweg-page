@@ -10,7 +10,7 @@ name: Jaen SendGrid
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions#on
 on:
   repository_dispatch:
-    types: [not_email]
+    types: [send_mail]
 
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobs
 jobs:

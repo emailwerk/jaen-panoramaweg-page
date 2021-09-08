@@ -24,6 +24,6 @@ jobs:
       - name: SendGrid
         uses: peter-evans/sendgrid-action@v1
         env:
+          PAYLOAD: ${{ github.event.client_payload }}
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
           SCRIPT_FILEPATH: '../../sendgrid.js'
-          PAYLOAD: ${{github.event.client_payload}}

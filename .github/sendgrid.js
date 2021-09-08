@@ -3,11 +3,6 @@
 const sgMail = require('@sendgrid/mail')
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
-// const fs = require('fs'),
-//   filename = 'hello-world.pdf',
-//   fileType = 'application/pdf',
-//   data = fs.readFileSync('attachments/' + filename)
-
 const msg = {
   to: 'noreply.snek.at@gmail.com',
   from: 'inspiremedia-fwd@outlook.com',
@@ -21,14 +16,6 @@ const msg = {
     <p><b>Kontakt Telefon-Nr.:</b> ${process.env.TELEPHONE}</p> 
     <p><b>Nachricht:</b></p>
     <p>${process.env.MESSAGE}</p>`
-  // attachments: [
-  //   {
-  //     content: data.toString('base64'),
-  //     filename: filename,
-  //     type: fileType,
-  //     disposition: 'attachment'
-  //   }
-  // ]
 }
 
 sgMail

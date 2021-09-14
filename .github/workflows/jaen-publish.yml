@@ -47,6 +47,8 @@ jobs:
       - name:
           Deploy jean-data to Github Pages 🚀
           # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsrun
+        env: # Or as an environment variable
+          GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
         run: |
           # Create gh-pages branch without history
           #git checkout --orphan gh-pages

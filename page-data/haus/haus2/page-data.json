@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-house-page-index-tsx",
+    "path": "/haus/haus2/",
+    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /e2dac58b-eb82-4b23-8c50-466cb7106d55","parent":{"id":"SitePage /haus/"},"children":[],"slug":"haus2","template":"HousePage","pageMetadata":{"datePublished":"2021-09-14T21:18:16.641Z","title":"haus2","description":"","image":"","canonical":"","isBlogPost":false},"fields":{},"images":[]}}},
+    "staticQueryHashes": ["2561576124","3160394115","340264421","3832545140"]}

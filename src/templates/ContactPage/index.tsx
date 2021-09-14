@@ -28,7 +28,7 @@ import gql from 'graphql-tag'
 import {Navbar} from '../../components/molecules'
 //#endregion
 
-//#region > Bi-Stack
+//#region
 const Bridge = new BifrostBridge({
   httpUrl: 'https://origin.snek.at/graphql'
 })

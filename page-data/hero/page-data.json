@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-pages-hero-tsx",
+    "path": "/hero/",
+    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /hero/","slug":"hero","pageMetadata":{"title":"Hero","datePublished":"2021-09-14T21:06:27.587Z"},"images":[]}}},
+    "staticQueryHashes": ["2561576124","3160394115","340264421","3832545140"]}

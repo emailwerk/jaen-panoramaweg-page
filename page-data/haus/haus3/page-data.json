@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-house-page-index-tsx",
     "path": "/haus/haus3/",
-    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /3513fe0c-7a45-46bb-bf56-e3f067ca1bb2","parent":{"id":"SitePage /haus/"},"children":[],"slug":"haus3","template":"HousePage","pageMetadata":{"datePublished":"2021-09-14T21:18:16.641Z","title":"haus3","description":"","image":"","canonical":"","isBlogPost":false},"fields":{},"images":[]}}},
-    "staticQueryHashes": ["2561576124","3160394115","340264421","3832545140"]}
+    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /3513fe0c-7a45-46bb-bf56-e3f067ca1bb2","parent":{"id":"SitePage /haus/"},"children":[],"slug":"haus3","template":"HousePage","pageMetadata":{"datePublished":"2021-09-14T21:18:16.641Z","title":"haus3","description":"","image":"","canonical":"","isBlogPost":false},"fields":"{}","images":[]}}},
+    "staticQueryHashes": ["2561576124","3160394115","3372958248","3832545140"]}

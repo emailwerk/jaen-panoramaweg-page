@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-projekt-tsx",
     "path": "/projekt/",
-    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /projekt/","pageMetadata":{"title":"Projekt","datePublished":"2021-09-14T21:18:16.641Z"},"fields":{"immoimg":{"_type":"PlainField","content":{"_type":"ImageBlock","src":"https://cloudflare-ipfs.com/ipfs/Qmbnmp4gbFASrbVyVSp8tZgbZmaFfQRRwkiSBsAt6ZwjQo"}}},"images":[{"id":{"pageId":"SitePage /projekt/","fieldName":"immoimg"},"file___NODE":"dea63af5-6bcb-598a-acbe-4ee325dcf3c9"}]}}},
-    "staticQueryHashes": ["2561576124","3160394115","340264421","3832545140"]}
+    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /projekt/","pageMetadata":{"title":"Projekt","datePublished":"2021-09-14T21:18:16.641Z"},"fields":"{\"immoimg\":{\"_type\":\"PlainField\",\"content\":{\"_type\":\"ImageBlock\",\"src\":\"https://cloudflare-ipfs.com/ipfs/Qmbnmp4gbFASrbVyVSp8tZgbZmaFfQRRwkiSBsAt6ZwjQo\"}}}","images":[{"id":{"pageId":"SitePage /projekt/","fieldName":"immoimg"},"file___NODE":"dea63af5-6bcb-598a-acbe-4ee325dcf3c9"}]}}},
+    "staticQueryHashes": ["2561576124","3160394115","3372958248","3832545140"]}

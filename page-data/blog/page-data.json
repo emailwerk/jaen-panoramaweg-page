@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-blog-tsx",
     "path": "/blog/",
-    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /blog/","children":[{"id":"SitePage /1b1744b3-6ff8-40a3-8d61-3b2c67cb878a"}],"pageMetadata":{"title":"Blog","datePublished":"2021-09-15T18:30:00.784Z"},"images":[]}}},
+    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /blog/","slug":"blog","pageMetadata":{"title":"Blog","datePublished":"2021-09-15T18:57:38.040Z"},"images":[]}}},
     "staticQueryHashes": ["2561576124","3160394115","3372958248","3832545140"]}

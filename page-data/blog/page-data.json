@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-blog-tsx",
     "path": "/blog/",
-    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /blog/","children":[{"id":"SitePage /431e5bee-52ff-4adc-b3bc-32b5af4489f4"},{"id":"SitePage /d9a884fb-c650-42b0-8707-671a372381dc"},{"id":"SitePage /d37df449-3359-4869-b52a-fb1b0f0226e7"},{"id":"SitePage /5ed2d0c8-99fb-4b6e-a860-362a62f2ab6c"}],"pageMetadata":{"title":"Blog","datePublished":"2021-09-14T21:18:16.641Z"},"images":[]}}},
+    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /blog/","children":[{"id":"SitePage /1b1744b3-6ff8-40a3-8d61-3b2c67cb878a"}],"pageMetadata":{"title":"Blog","datePublished":"2021-09-15T18:30:00.784Z"},"images":[]}}},
     "staticQueryHashes": ["2561576124","3160394115","3372958248","3832545140"]}

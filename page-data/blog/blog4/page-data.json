@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-blog-page-index-tsx",
-    "path": "/blog/blog4/",
-    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /5ed2d0c8-99fb-4b6e-a860-362a62f2ab6c","parent":{"id":"SitePage /blog/"},"children":[],"slug":"blog4","template":"BlogPage","pageMetadata":{"datePublished":"2021-09-14T21:18:16.641Z","title":"blog4","description":"","image":"","canonical":"","isBlogPost":false},"fields":"{\"blogimgleftimg\":{\"_type\":\"PlainField\",\"content\":{\"_type\":\"ImageBlock\",\"src\":\"https://cloudflare-ipfs.com/ipfs/Qmbnmp4gbFASrbVyVSp8tZgbZmaFfQRRwkiSBsAt6ZwjQo\"}}}","images":[{"id":{"pageId":"SitePage /5ed2d0c8-99fb-4b6e-a860-362a62f2ab6c","fieldName":"blogimgleftimg"},"file___NODE":"dea63af5-6bcb-598a-acbe-4ee325dcf3c9"}]}}},
-    "staticQueryHashes": ["2561576124","3160394115","3372958248","3832545140"]}

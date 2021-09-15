@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-blog-page-index-tsx",
+    "path": "/blog/baustart/",
+    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /82bc7c2e-5e2a-4c05-85da-b6bfc8a6f666","parent":{"id":"SitePage /blog/"},"children":[],"slug":"baustart","template":"BlogPage","pageMetadata":{"datePublished":"2021-09-15T19:17:05.227Z","title":"baustart","description":"","image":"","canonical":"","isBlogPost":false},"fields":"{}","images":[]}}},
+    "staticQueryHashes": ["2561576124","3160394115","3372958248","3832545140"]}

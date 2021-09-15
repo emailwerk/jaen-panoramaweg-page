@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-haus-tsx",
     "path": "/haus/",
-    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /haus/","children":[{"id":"SitePage /cd49be42-4e26-4d2d-9d48-07576789de21"},{"id":"SitePage /d2e12799-4a12-4026-a459-126ebfda0aff"},{"id":"SitePage /cf7c85ca-ad28-45e3-9341-f49e88149a02"},{"id":"SitePage /995633e1-e10d-4686-bb40-245383f40633"}],"pageMetadata":{"title":"Haus","datePublished":"2021-09-15T18:30:00.784Z"},"images":[]}}},
+    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /haus/","slug":"haus","pageMetadata":{"title":"Haus","datePublished":"2021-09-15T19:13:05.114Z"},"images":[]}}},
     "staticQueryHashes": ["2561576124","3160394115","3372958248","3832545140"]}

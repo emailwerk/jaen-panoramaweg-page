@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-lage-tsx",
     "path": "/lage/",
-    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /lage/","pageMetadata":{"title":"Lage","datePublished":"2021-09-15T18:30:00.784Z"},"fields":"{\"locationimage\":{\"_type\":\"PlainField\",\"content\":{\"_type\":\"ImageBlock\",\"src\":\"https://cloudflare-ipfs.com/ipfs/QmVnbbnvkR8mWxA2VQAVDWXSfSBHw6FS2aGkaRGZDgU96Q\"}}}","images":[{"id":{"pageId":"SitePage /lage/","fieldName":"locationimage"},"file___NODE":"af103758-7a68-5047-8d2f-4f0c1d783a3a"}]}}},
+    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /lage/","slug":"lage","pageMetadata":{"title":"Lage","datePublished":"2021-09-15T19:13:05.115Z"},"images":[]}}},
     "staticQueryHashes": ["2561576124","3160394115","3372958248","3832545140"]}

@@ -1,7 +1,14 @@
 //#region > Imports
 //> React
 // Contains all the functionality necessary to define React components
-import {Box, Container, Heading, Text, Wrap} from '@chakra-ui/react'
+import {
+  Box,
+  Container,
+  Heading,
+  Text,
+  useColorModeValue,
+  Wrap
+} from '@chakra-ui/react'
 import React from 'react'
 // React Router
 // import { Link } from "react-router-dom";
@@ -25,17 +32,14 @@ const PartnerSection = ({
   subhead1
 }: // background1
 Props): JSX.Element => {
+  const bgColor = useColorModeValue('panoramaweg.lightgray', 'gray.700')
   return (
-    <Box
-      as="section"
-      id="partnersection"
-      backgroundColor="panoramaweg.lightgray"
-      pb="5">
+    <Box as="section" id="partnersection" backgroundColor={bgColor} pb="10">
       <Container centerContent width="100vw" fontSize="1.1rem">
-        <Heading as="h2" fontSize="1.5rem" mt="3">
+        <Heading as="h2" fontSize="1.5rem" mt="6">
           {head1}
         </Heading>
-        <Text mb="5">{subhead1}</Text>
+        <Text mb="10">{subhead1}</Text>
       </Container>
       {partners1}
     </Box>

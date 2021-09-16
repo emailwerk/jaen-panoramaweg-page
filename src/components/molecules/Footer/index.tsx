@@ -6,7 +6,14 @@
 // import { Link } from "react-router-dom";
 //> MDB
 // "Material Design for Bootstrap" is a great UI design framework
-import {Box, Container, Flex, HStack, Text} from '@chakra-ui/react'
+import {
+  Box,
+  Container,
+  Flex,
+  HStack,
+  Text,
+  useColorModeValue
+} from '@chakra-ui/react'
 
 import {HiHeart} from '@react-icons/all-files/hi/HiHeart'
 import {BiCopyright} from '@react-icons/all-files/bi/BiCopyright'
@@ -18,14 +25,12 @@ import './index.scss'
 //#endregion
 //#region > Components
 const Footer = (): JSX.Element => {
+  const bgColor = useColorModeValue('panoramaweg.lightgray', 'gray.700')
+  const fontColor = useColorModeValue('black', 'white')
+
   return (
-    <Box
-      bg="panoramaweg.lightgray"
-      w="100%"
-      h="12vh"
-      position="absolute"
-      bottom="0">
-      <Container w="fit-content" centerContent color="panoramaweg.dark" pt="6">
+    <Box bg={bgColor} w="100%" h="115px" position="absolute" bottom="0">
+      <Container w="fit-content" centerContent color={fontColor} pt="4">
         <Flex>
           <IconContext.Provider value={{style: {marginTop: '3'}}}>
             <BiCopyright />
@@ -41,19 +46,24 @@ const Footer = (): JSX.Element => {
           mt="2"
           fontSize={['0.7rem', '0.8rem', '1.1rem', '1.1rem']}>
           <Text>Made with</Text>
-          <IconContext.Provider value={{color: '#4299E1', size: '1.25em'}}>
-            <HiHeart />
-          </IconContext.Provider>
+          <Link href="https://snek.at" isExternal>
+            <IconContext.Provider value={{color: '#4299E1', size: '1.25em'}}>
+              <HiHeart />
+            </IconContext.Provider>
+          </Link>
           <Text>by</Text>
           <Text ml="1" color="blue.400">
             InspireMedia GmbH
           </Text>
           <Text>.</Text>
         </Flex>
-        <Flex fontSize={['xx-small', 'xx-small', 'xs', 'xs']}>
+        <Flex fontSize="xs">
           <HStack spacing="5" mt="2">
             <Link href="https://www.top-immo.org/about" isExternal>
               Impressum
+            </Link>
+            <Link fontSize="sm" href="https://snek.at" isExternal>
+              Powered by Snek
             </Link>
             <Link href="https://www.top-immo.org/privacy" isExternal>
               Datenschutz

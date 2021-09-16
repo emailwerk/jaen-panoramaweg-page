@@ -27,10 +27,11 @@ import {
   Image,
   Progress,
   Wrap,
-  Button
+  Button,
+  Badge,
+  VStack
 } from '@chakra-ui/react'
 import {Link} from 'gatsby'
-
 import * as style from './style'
 //#endregion
 
@@ -82,13 +83,13 @@ const HousePage: JaenTemplate = (): JSX.Element => {
         as="section"
         id="housepage"
         minH="100vh"
-        paddingTop="15vh"
+        paddingTop="140px"
         overflow="hidden"
-        paddingBottom="12vh">
+        paddingBottom="115px">
         <Navbar />
         <Container
           centerContent
-          maxW={['100%', '100%', '80vw', '80vw']}
+          maxW={['100%', '100%', '90vw', '90vw']}
           borderBottom="1px"
           borderColor="panoramaweg.lightgray"
           pb="12"
@@ -96,14 +97,14 @@ const HousePage: JaenTemplate = (): JSX.Element => {
           <Heading mb="0">
             <fields.TextField
               fieldName="housetitle"
-              initValue="Housetitle"
+              initValue="<p>Überschrift</p>"
               rtf={false}
             />
           </Heading>
           <Text fontSize="1.5rem" marginBottom="10">
             <fields.TextField
               fieldName="houseteaser"
-              initValue="houseteaser"
+              initValue="<p>Unterüberschrift</p>"
               rtf="false"
             />
           </Text>
@@ -112,14 +113,14 @@ const HousePage: JaenTemplate = (): JSX.Element => {
               fieldName="houseimg"
               initValue={{
                 src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                alt: 'houseimg',
-                title: 'houseimg'
+                alt: 'houseimg'
               }}
               className="responsiveImage"
             />
             <Container
-              maxW={['90%', '90%', '35vw', '35vw']}
-              ml={['0', '0', '10', '10']}
+              maxW={['300px', '300px', '35vw', '35vw']}
+              ml={['auto', 'auto', '10', '10']}
+              mr={['auto', 'auto', '0', '0']}
               fontSize="1.1rem">
               <fields.TextField
                 fieldName="houserichtext"
@@ -133,13 +134,13 @@ const HousePage: JaenTemplate = (): JSX.Element => {
           <Text fontWeight="light" fontSize="1.75rem" mb="5">
             <fields.TextField
               fieldName="houseadtext"
-              initValue="Unterüberschrift"
+              initValue="<p>Unterüberschrift</p>"
               rtf={false}
             />
           </Text>
           <Flex direction={['column', 'column', 'row', 'row']}>
             <Box
-              width={['100%', '100%', 'fit-content', 'fit-content']}
+              width={['90%', '90%', 'fit-content', 'fit-content']}
               borderRadius="25px"
               border="1px"
               borderColor="panoramaweg.lightgray"
@@ -166,7 +167,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
               </HStack>
             </Box>
             <Box
-              width={['100%', '100%', 'fit-content', 'fit-content']}
+              width={['90%', '90%', 'fit-content', 'fit-content']}
               borderRadius="25px"
               border="1px"
               borderColor="panoramaweg.lightgray"
@@ -193,7 +194,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
               </HStack>
             </Box>
             <Box
-              width={['100%', '100%', 'fit-content', 'fit-content']}
+              width={['90%', '90%', 'fit-content', 'fit-content']}
               borderRadius="25px"
               border="1px"
               borderColor="panoramaweg.lightgray"
@@ -271,20 +272,47 @@ const HousePage: JaenTemplate = (): JSX.Element => {
                   <>
                     <Link to={link}>
                       <Box
-                        width={['90%', '90%', '25vw', '25vw']}
+                        width={['90%', '90%', '580px', '580px']}
                         border="1px"
                         borderColor="panoramaweg.lightgray"
                         padding="5"
                         borderRadius="25px"
                         justifyContent="center"
-                        alignContent="center">
+                        alignContent="center"
+                        ml={['auto', 'auto', '0', '0']}
+                        mr={['auto', 'auto', '0', '0']}>
                         <Flex direction={['column', 'column', 'row', 'row']}>
-                          <Image
-                            src={image}
-                            w={['270px', '270px', '230px', '230px']}
-                          />
+                          <VStack
+                            spacing="0"
+                            ml={['auto', 'auto', '0', '0']}
+                            mr={['auto', 'auto', '0', '0']}
+                            mt={['0', '0', 'auto', 'auto']}
+                            mb={['5', '5', 'auto', 'auto']}>
+                            <Image
+                              src={image}
+                              alt="apartmentcardimg"
+                              w="300px"
+                              h="200px"
+                            />
+                            <Badge
+                              backgroundColor={
+                                available === 'Verfügbar'
+                                  ? 'panoramaweg.green'
+                                  : '#f61a42'
+                              }
+                              width="300px"
+                              height="30px"
+                              color="white"
+                              textTransform="none"
+                              textAlign="center"
+                              fontSize="1.1rem"
+                              pt="0.6">
+                              {available}
+                            </Badge>
+                          </VStack>
                           <Container size="lg">
                             <Heading>{formatedSlug}</Heading>
+
                             <Text>Wohnungsgröße: {cleanedSize}m²</Text>
                             <Progress
                               value={parseInt(cleanedSize)}
@@ -340,6 +368,7 @@ const HousePage: JaenTemplate = (): JSX.Element => {
             Filter deaktivieren
           </Button>
         </Container>
+
         <Footer />
       </Box>
     </style.responsiveImage>

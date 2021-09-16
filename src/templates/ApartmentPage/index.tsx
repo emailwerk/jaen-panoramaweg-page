@@ -24,6 +24,7 @@ import {
   Flex,
   Heading,
   Text,
+  useColorModeValue,
   VStack,
   Wrap
 } from '@chakra-ui/react'
@@ -35,7 +36,10 @@ import * as style from './style'
 import ImageCollection from '../../components/organisms/ImageCollection'
 
 const ApartmentPage: JaenTemplate = () => {
-  const url = typeof window !== 'undefined' && window.location.href
+  const url = (typeof window !== 'undefined' && window.location.href) || ''
+  const bgColor = useColorModeValue('panoramaweg.lightgray', 'gray.700')
+  const breadcumbFontColor = useColorModeValue('#0645AD', 'white')
+
   let breadcrumbs = url.split('/')
 
   breadcrumbs = breadcrumbs.slice(
@@ -44,10 +48,12 @@ const ApartmentPage: JaenTemplate = () => {
   )
 
   function format(value: string[]) {
-    value[0] = value[0].replace('haus', 'haus ')
-    value[1] = value[1].replace('top', 'top ')
-    for (let i = 0; i < value.length; i++) {
-      value[i] = value[i].charAt(0).toUpperCase() + value[i].substring(1)
+    if (value.length > 1) {
+      value[0] = value[0].replace('haus', 'haus ')
+      value[1] = value[1].replace('top', 'top ')
+      for (let i = 0; i < value.length; i++) {
+        value[i] = value[i].charAt(0).toUpperCase() + value[i].substring(1)
+      }
     }
     return value
   }
@@ -63,29 +69,30 @@ const ApartmentPage: JaenTemplate = () => {
         id="apartmentpage"
         minH="100vh"
         overflow="hidden"
-        paddingTop="15vh"
-        paddingBottom="12vh">
+        paddingTop="140px"
+        paddingBottom="115px">
         <Navbar />
         <Center mb="5">
           <Breadcrumb
-            backgroundColor="panoramaweg.lightgray"
+            backgroundColor={bgColor}
             borderRadius="25px"
             w={['100%', '100%', '58vw', '58vw']}
             ml={['5', '5', '0', '0']}
             mr={['5', '5', '0', '0']}
-            padding="3">
+            padding="3"
+            color={breadcumbFontColor}>
             <BreadcrumbItem>
-              <BreadcrumbLink color="#0645AD">
+              <BreadcrumbLink>
                 <Link to="/">Übersicht</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem>
-              <BreadcrumbLink color="#0645AD">
+              <BreadcrumbLink>
                 <Link to={parenthref}>{breadcrumbs[0]}</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbItem>
-              <BreadcrumbLink color="#0645AD">{breadcrumbs[1]}</BreadcrumbLink>
+              <BreadcrumbLink>{breadcrumbs[1]}</BreadcrumbLink>
             </BreadcrumbItem>
           </Breadcrumb>
         </Center>
@@ -283,7 +290,6 @@ const ApartmentPage: JaenTemplate = () => {
               fieldName="apartmentrightimg"
               initValue={{
                 src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                title: 'rightimg',
                 alt: 'rightimg'
               }}
               borderRadius="25px"
@@ -295,7 +301,6 @@ const ApartmentPage: JaenTemplate = () => {
               fieldName="apartmentleftimg"
               initValue={{
                 src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                title: 'leftimg',
                 alt: 'lefttimg'
               }}
               borderRadius="25px"
@@ -305,8 +310,8 @@ const ApartmentPage: JaenTemplate = () => {
             <Box
               border={['0px', '0px', '1px', '1px']}
               borderColor={[
-                '',
-                '',
+                'panoramaweg.lightgray',
+                'panoramaweg.lightgray',
                 'panoramaweg.lightgray',
                 'panoramaweg.lightgray'
               ]}
@@ -354,11 +359,7 @@ const ApartmentPage: JaenTemplate = () => {
             Bau und Ausstattungsbeschreibung
           </Button>
         </Container>
-        <Box as="div" mt="5" mb="10">
-          <Center>
-            <ImageCollection />
-          </Center>
-        </Box>
+        <Box as="div" mt="5" mb="10"></Box>
         <Container as="div" centerContent mt="5" mb="10">
           <Heading>Interessiert?</Heading>
           <Button
@@ -374,7 +375,9 @@ const ApartmentPage: JaenTemplate = () => {
             Kontaktiere uns
           </Button>
         </Container>
-
+        <Center>
+          <ImageCollection />
+        </Center>
         <Footer />
       </Box>
     </style.responsiveImage>

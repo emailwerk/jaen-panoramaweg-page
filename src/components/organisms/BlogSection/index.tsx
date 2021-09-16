@@ -30,7 +30,11 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
 
   return (
     <Element id="blogsection">
-      <Container centerContent maxW="80vw" mb="10" mt="5">
+      <Container
+        centerContent
+        maxW={['100%', '100%', '80%', '80%']}
+        mb="20"
+        mt="10">
         <Heading fontSize="1.5rem">{bloghead}</Heading>
         <Text fontSize="1.1rem" mb="5">
           {blogsubhead}
@@ -41,11 +45,11 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
           options={[
             'Finanzierung',
             'Baustart',
-            'Platzhalter',
-            'Platzhalter',
+            'Platzhalter1',
+            'Platzhalter2',
             'Fertigstellung'
           ]}
-          initValue={2}
+          initValue={'Finanzierung'}
           onRenderPopover={null}
           onRender={(selection, options, onSelect, isEditing) => {
             if (!isWindow) {
@@ -70,7 +74,7 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
             )
           }}
         />
-        <Box marginTop="5" />
+        <Box marginTop="10" />
         <fields.IndexField
           fieldName="blogindex"
           fixedSlug="SitePage /blog/"
@@ -96,8 +100,6 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
                 fields?.blogimgleftimg?.content?.src ||
                 'https://i.ibb.co/J2jzkBx/placeholder.jpg'
 
-              console.log(slug)
-
               cards.push(
                 <Link to={'/blog/' + slug + '/'}>
                   <Box
@@ -107,13 +109,17 @@ const BlogSection = ({bloghead, blogsubhead}: Props): JSX.Element => {
                     boxSizing="border-box"
                     width={['300px', '300px', '425px', '425px']}>
                     <Image
+                      alt="blogcardimg"
                       src={img}
                       height={['200px', '200px', '285px', '285px']}
                       width={['300px', '300px', '425px', '425px']}
                       borderTopRadius="25px"
                     />
                     <Box padding="5">
-                      <Heading fontSize="1.5rem">{heading}</Heading>
+                      <Heading
+                        fontSize={['1.1rem', '1.1rem', '1.5rem', '1.5rem']}>
+                        {heading}
+                      </Heading>
                       <Text noOfLines={3} fomtSize="1.1rem">
                         {text}
                       </Text>

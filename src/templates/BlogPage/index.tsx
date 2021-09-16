@@ -13,7 +13,8 @@ import {Footer, Navbar} from '../../components/molecules'
 
 import {JaenTemplate} from '@snek-at/jaen-pages/src/types'
 import {Box} from '@chakra-ui/layout'
-import {Container, Heading, Text} from '@chakra-ui/react'
+import {Container, Heading, Text, Center} from '@chakra-ui/react'
+import ImageCollection from '../../components/organisms/ImageCollection'
 //#endregion
 
 //#endregion
@@ -26,8 +27,8 @@ const BlogPage: JaenTemplate = () => {
       <Box
         as="section"
         id="blogpage"
-        pb="12vh"
-        pt="15vh"
+        pb="115px"
+        pt="140px"
         minH={['', '', '100vh', '100vh']}>
         <Navbar />
         <Container
@@ -37,18 +38,18 @@ const BlogPage: JaenTemplate = () => {
           <Heading fontSize="1.75rem">
             <fields.TextField
               fieldName="blogheading"
-              initValue="Überschrift"
+              initValue="<p>Überschrift</p>"
               rtf={false}
             />
           </Heading>
-          <Text fontSize="1.5rem" mb="5">
+          <Text fontSize="1.5rem" mb="10">
             <fields.TextField
               fieldName="blogsubheading"
-              initValue="vom 01.01.2022"
+              initValue="<p>vom 01.01.2022</p>"
               rtf={false}
             />
           </Text>
-          <Text mb="5" maxW={['85%', '85%']}>
+          <Text mb="10" maxW={['85%', '85%']}>
             <fields.TextField
               fieldName="blogrichtext"
               initValue="<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>"
@@ -60,7 +61,6 @@ const BlogPage: JaenTemplate = () => {
                 fieldName="blogimgleftimg"
                 initValue={{
                   src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                  title: 'blogimgleftimg',
                   alt: 'blogimgleftimg'
                 }}
                 className="responsiveImage"
@@ -69,7 +69,7 @@ const BlogPage: JaenTemplate = () => {
             imgleftheading={
               <fields.TextField
                 fieldName="blogimgleftheading"
-                initValue="Unterüberschrift"
+                initValue="<p>Unterüberschrift</p>"
                 rtf={false}
               />
             }
@@ -81,6 +81,9 @@ const BlogPage: JaenTemplate = () => {
             }
           />
         </Container>
+        <Center mt="20" mb="10">
+          <ImageCollection />
+        </Center>
         <Footer />
       </Box>
     </style.responsiveImage>

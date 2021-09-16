@@ -4,7 +4,7 @@
 
 import * as Yup from 'yup'
 import 'yup-phone'
-
+import React from 'react'
 import {
   Box,
   FormControl,
@@ -130,36 +130,55 @@ const ContactPage: JaenTemplate = () => {
       id="contactpage"
       overflow="hidden"
       minH="100vh"
-      paddingTop="15vh">
+      paddingTop="140px"
+      pb="115px">
       <Navbar />
-      <Container centerContent maxW={['100%', '100%', '40vw', '40vw']}>
+      <Container
+        textAlign="center"
+        centerContent
+        maxW={['100%', '100%', '40vw', '40vw']}
+        mt={['10', '10', '0', '0']}>
         {top === '' ? (
           <Heading fontSize="1.75rem">
             Sie sind an einer unserer Immobilien interessiert?
           </Heading>
         ) : (
-          <Flex fontSize="1.75rem">
-            <Heading mr="1">Sie sind an</Heading>
-            <Badge colorScheme="greenwhite" borderRadius="25px" pl="3" pr="3">
-              <Text marginTop="2" fontSize="xl">
-                {top}
-              </Text>
-            </Badge>
-            <Heading ml="1">interessiert?</Heading>
-          </Flex>
+          <Heading fontSize="1.75rem" mx="auto">
+            Sie sind an{' '}
+            {
+              <>
+                <Badge
+                  display={['none', 'none', 'inline-block', 'inline-block']}
+                  colorScheme="greenwhite"
+                  borderRadius="25px"
+                  px="3"
+                  py="2"
+                  width="min-content"
+                  ml="auto"
+                  mr="auto">
+                  <Text fontSize="xl">{top}</Text>
+                </Badge>
+                <Text display={['inline', 'inline', 'none', 'none']}>
+                  {top}
+                </Text>
+              </>
+            }{' '}
+            interessiert?
+          </Heading>
         )}
-        <Text fontSize="1.5rem" fontWeight="thin">
+        <Box fontSize="1.25rem" mt="2">
           <fields.TextField
             fieldName="contactsubheading"
-            initValue="Kontaktieren Sie uns und und wir melden uns bei Ihnen!"
+            initValue="<p>Kontaktieren Sie uns und und wir melden uns bei Ihnen!</p>"
           />
-        </Text>
+        </Box>
       </Container>
       <Container
         width={['100%', '100%', '70vw', '70vw']}
         centerContent
         mb="5"
-        mt="10">
+        mt="20"
+        minH="40vh">
         <Flex direction={['column', 'column', 'row', 'row']}>
           <Box w={['90%', '90%', '30vw', '30vw']} mr="5">
             <Heading
@@ -175,7 +194,7 @@ const ContactPage: JaenTemplate = () => {
                 isInvalid={
                   (formik.errors.fname && formik.touched.fname) || false
                 }>
-                <FormErrorMessage>
+                <FormErrorMessage ml="5" mb="1">
                   Bitte geben Sie Ihren Vornamen ein.
                 </FormErrorMessage>
                 <Input
@@ -191,7 +210,7 @@ const ContactPage: JaenTemplate = () => {
                 isInvalid={
                   (formik.errors.lname && formik.touched.lname) || false
                 }>
-                <FormErrorMessage>
+                <FormErrorMessage ml="5" mb="1">
                   Bitte geben Sie Ihren Nachnamen ein.
                 </FormErrorMessage>
                 <Input
@@ -207,7 +226,7 @@ const ContactPage: JaenTemplate = () => {
                 isInvalid={
                   (formik.errors.email && formik.touched.email) || false
                 }>
-                <FormErrorMessage>
+                <FormErrorMessage ml="5" mb="1">
                   Bitte geben Sie eine korrekte Emailadresse ein.
                 </FormErrorMessage>
                 <Input
@@ -223,7 +242,7 @@ const ContactPage: JaenTemplate = () => {
                 isInvalid={
                   (formik.errors.telephone && formik.touched.telephone) || false
                 }>
-                <FormErrorMessage>
+                <FormErrorMessage ml="5" mb="1">
                   Die Telefonnummer muss in dem Schema +43664 5678901 eingegeben
                   werden.
                 </FormErrorMessage>
@@ -241,7 +260,7 @@ const ContactPage: JaenTemplate = () => {
                 isInvalid={
                   (formik.errors.message && formik.touched.message) || false
                 }>
-                <FormErrorMessage>
+                <FormErrorMessage ml="5" mb="1">
                   Bitte schreiben Sie uns eine Nachricht.
                 </FormErrorMessage>
                 <Textarea
@@ -265,11 +284,11 @@ const ContactPage: JaenTemplate = () => {
               </Box>
             </form>
           </Box>
-          <Box w={['90%', '90%', '30vw', '30vw']} h="40vh">
+          <Box w={['90%', '90%', '30vw', '30vw']} my={['10', '10', '0', '0']}>
             <Heading fontSize="1.5rem">
               <fields.TextField
                 fieldName="contactheadingright"
-                initValue="Wer sind wir?"
+                initValue="<p>Wer sind wir?</p>"
               />
             </Heading>
             <Text fontSize="lg" mt="5">

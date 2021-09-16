@@ -3,7 +3,8 @@
 // Contains all the functionality necessary to define React components
 import React from 'react'
 import {fields} from '@snek-at/jaen-pages'
-import {store as JaenStore} from '@snek-at/jaen-pages/src/store'
+import {usePages} from '@snek-at/jaen-pages/src/contexts/cms'
+import {SitePages} from '@snek-at/jaen-pages/src/types'
 // React Router
 // import { Link } from "react-router-dom";
 //> MDB
@@ -21,7 +22,6 @@ import {
   Image,
   Badge,
   Button,
-  Spacer,
   Progress
 } from '@chakra-ui/react'
 
@@ -37,10 +37,12 @@ interface Props {
 
 //#region > Components
 const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
-  // const addDot = (x: any) => {
-  //   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-  // };
-  const store = JaenStore.getState().site.allSitePage?.nodes
+  const site = usePages()
+
+  const addDot = (x: any) => {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+  }
+  const store = site?.nodes
   let minPrice = 0
   let maxPrice = 0
   let maxSize = 0
@@ -49,8 +51,8 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
   let numFlats = 0
   let apartmentTypes: string[] = []
   let heading = ''
-
   function cleanFieldValues(value: string, type: string) {
+    console.log('cleanFieldValues', value, type)
     value = value.substring(3, value.length - 4)
     if (type === 'price') {
       value = value.replaceAll('.', '')
@@ -80,9 +82,9 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
   }
 
   function fetchData(pages) {
-    numFlats = pages.length
+    numFlats = pages?.length
     for (const page of pages) {
-      const fields = store[page.id]?.fields
+      const fields = store?.[page.id]?.fields
       console.log('data:', fields)
       let price = fields?.apartmentprice?.content?.text || '<p>0</p>'
       let size = fields?.apartmentsize?.content?.text || '<p>0</p>'
@@ -102,7 +104,7 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
   }
 
   return (
-    <Box as="section" id="housesection" mb="10" mt="10">
+    <Box as="section" id="housesection" mb="20" mt="20">
       <Container centerContent maxW="40vw">
         <Heading fontSize="1.75rem">{househead}</Heading>
         <Text fontSize="1.1rem" mb="5">
@@ -113,8 +115,6 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
         fieldName="houseindex"
         fixedSlug="SitePage /haus/"
         onRender={page => {
-          console.log('store:', JaenStore.getState())
-          console.log('parent', page)
           const children = page?.children || []
 
           const cards = []
@@ -127,7 +127,7 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
             let head = slug
             head = slug.replace('haus', 'haus ')
             head = head.charAt(0).toUpperCase() + head.substring(1)
-            const grandchildren = child?.page?.children
+            const grandchildren = child?.page?.children || []
             minPrice = 0
             maxPrice = 0
             maxSize = 0
@@ -138,27 +138,30 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
             heading = head
 
             fetchData(grandchildren)
+            minPrice = addDot(minPrice)
+            maxPrice = addDot(maxPrice)
 
             cards.push(
               <Box
                 padding="5"
-                borderBottom={['1px']}
-                border={['0px', '0px', '1px', '1px']}
-                borderColor={[
-                  'panoramaweg.lightgray',
-                  'panoramaweg.lightgray',
-                  'panoramaweg.lightgray',
-                  'panoramaweg.lightgray'
-                ]}
+                border="1px"
+                borderColor="panoramaweg.lightgray"
                 borderRadius="25px">
                 <Flex direction={['column', 'column', 'row', 'row']}>
                   <Image
+                    alt="housesectionimg"
                     src={img}
                     width="250px"
+                    height="170px"
                     ml={['auto', 'auto', '0', '0']}
                     mr={['auto', 'auto', '0', '0']}
+                    mb={['5', '5', '0', '0']}
                   />
-                  <Container minW="235px" centerContent>
+                  <Box
+                    ml={['0', '0', '5', '5']}
+                    minW="210px"
+                    alignContent={['center', 'center', 'start', 'start']}
+                    justifyContent={['center', 'center', 'start', 'start']}>
                     <Heading fontSize="1.25rem">{heading}</Heading>
                     <Text fontSize="1.1rem">{numFlats} Wohnungen</Text>
                     <Flex mb="3">
@@ -220,14 +223,19 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
                         {minPrice} - {maxPrice}
                       </Text>
                     </Flex>
-                  </Container>
+                  </Box>
                 </Flex>
                 <Flex
                   marginTop="3"
-                  direction={['column', 'column', 'row', 'row']}>
+                  direction={[
+                    'column-reverse',
+                    'column-reverse',
+                    'row',
+                    'row'
+                  ]}>
                   <Button
                     colorScheme="greenwhite"
-                    mb={['3', '3', '0', '0']}
+                    mt={['3', '3', '0', '0']}
                     padding="5"
                     paddingLeft="12"
                     paddingRight="12"
@@ -237,7 +245,7 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
                     onClick={() => navigate('/haus/' + slug + '/')}>
                     Wohnungsübersicht
                   </Button>
-                  <Container>
+                  <Container mt="auto">
                     <Progress
                       max={numFlats}
                       value={availableFlats}
@@ -262,7 +270,12 @@ const HousesSection = ({househead, housesubhead}: Props): JSX.Element => {
             )
           }
           return (
-            <Wrap justify="center" spacing="5" maxW="75vw" ml="auto" mr="auto">
+            <Wrap
+              justify="center"
+              spacing="5"
+              maxW={['90%', '100%', '100%', '75vw']}
+              ml="auto"
+              mr="auto">
               {cards.map((card, key) => {
                 return <Box key={key}>{card}</Box>
               })}

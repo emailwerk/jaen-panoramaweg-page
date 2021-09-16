@@ -24,15 +24,15 @@ const ImmoPage: JaenTemplate = () => {
         as="section"
         id="immopage"
         overflow="hidden"
-        paddingTop="15vh"
-        paddingBottom="12vh"
+        paddingTop="140px"
+        paddingBottom="115px"
         minH="100vh">
         <Navbar />
         <ImageTopSection
           head1={
             <fields.TextField
               fieldName="immohead1"
-              initValue="Überschrift"
+              initValue="<p>Überschrift</p>"
               rtf={false}
             />
           }
@@ -41,7 +41,6 @@ const ImmoPage: JaenTemplate = () => {
               fieldName="immoimg"
               initValue={{
                 src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                title: 'immoimg',
                 alt: 'immoimg'
               }}
               className="responsiveImage"

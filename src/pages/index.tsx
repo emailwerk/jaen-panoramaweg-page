@@ -23,19 +23,24 @@ import {StaticImage} from 'gatsby-plugin-image'
 
 const IndexPageCSS = styled(Box)`
   .responsiveImage {
+    min-height: 180px;
     ${mq[0]} {
       width: 300px;
+      height: 180px;
       margin-left: auto;
       margin-right: auto;
     }
     ${mq[1]} {
       width: 300px;
+      height: 180px;
     }
     ${mq[2]} {
-      width: 22vw;
+      width: 600px;
+      height: 360px;
     }
     ${mq[3]} {
-      width: 22vw;
+      width: 600px;
+      height: 360px;
     }
   }
 `
@@ -46,7 +51,7 @@ const IndexPageCSS = styled(Box)`
 const IndexPage = () => {
   return (
     <IndexPageCSS>
-      <Box as="section" id="homepage" paddingBottom="12vh" overflow="hidden">
+      <Box as="section" id="homepage" paddingBottom="115px" overflow="hidden">
         <Navbar />
         <HeroSection />
         <ImageTopSection
@@ -55,8 +60,7 @@ const IndexPage = () => {
               fieldName="imagetopimg1"
               initValue={{
                 src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                alt: 'placeholder',
-                title: 'placeholder'
+                alt: 'placeholder'
               }}
               className="responsiveImage"
             />
@@ -64,7 +68,7 @@ const IndexPage = () => {
           head1={
             <fields.TextField
               fieldName="imagetophead1"
-              initValue="Leben am Panoramaweg"
+              initValue="<p>Leben am Panoramaweg</p>"
               rtf={false}
             />
           }
@@ -80,14 +84,14 @@ const IndexPage = () => {
           househead={
             <fields.TextField
               fieldName="homehousehead"
-              initValue="Überschrift"
+              initValue="<p>Überschrift</p>"
               rtf={false}
             />
           }
           housesubhead={
             <fields.TextField
               fieldName="homehousesubhead"
-              initValue="Unterüberschrift"
+              initValue="<p>Unterüberschrift</p>"
               rtf={false}
             />
           }
@@ -105,41 +109,40 @@ const IndexPage = () => {
           head1={
             <fields.TextField
               fieldName="head1"
-              initValue="Unsere Partner"
+              initValue="<p>Unsere Partner</p>"
               rtf={false}
             />
           }
           subhead1={
             <fields.TextField
               fieldName="subhead1"
-              initValue="Wir bauen auf Vertrauen."
+              initValue="<p>Wir bauen auf Vertrauen.</p>"
               rtf={false}
             />
           }
         />
-        <Box paddingTop="5" />
+        <Box paddingTop="10" />
         <BlogSection
           bloghead={
             <fields.TextField
               fieldName="bloghead"
-              initValue="Neues von der Baustelle"
+              initValue="<p>Neues von der Baustelle</p>"
               rtf={false}
             />
           }
           blogsubhead={
             <fields.TextField
               fieldName="blogsubhead"
-              initValue="Wir halten Sie am Laufenden."
+              initValue="<p>Wir halten Sie am Laufenden.</p>"
               rtf={false}
             />
           }
         />
-        <Center marginBottom="10">
+        <Center marginBottom="20">
           <StaticImage
-            src="../images/logo_short.png"
-            title="Logo"
+            src="../images/panoramaweg_dark.svg"
             alt="Logo"
-            style={{width: '300px'}}
+            style={{width: '300px', height: '180px'}}
             imgStyle={{objectFit: 'contain'}}
           />
         </Center>

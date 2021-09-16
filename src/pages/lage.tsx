@@ -23,16 +23,16 @@ const LocationPage: JaenTemplate = () => {
       <Box
         as="section"
         id="locationpage"
-        paddingBottom="12vh"
+        paddingBottom="115px"
         overflow="hidden"
-        paddingTop="15vh"
+        paddingTop="140px"
         minHeight="100vh">
         <Navbar />
         <ImageTopSection
           head1={
             <fields.TextField
               fieldName="locationhead"
-              initValue="Überschrift"
+              initValue="<p>Überschrift</p>"
               rtf={false}
             />
           }
@@ -41,7 +41,6 @@ const LocationPage: JaenTemplate = () => {
               fieldName="locationimage"
               initValue={{
                 src: 'https://i.ibb.co/J2jzkBx/placeholder.jpg',
-                title: 'locationimg',
                 alt: 'locationimg'
               }}
               className="responsiveImage"

@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-house-page-index-tsx",
-    "path": "/haus1/",
-    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /f0481534-5c1b-4ea1-b3af-da13bf105a63","parent":{"id":"SitePage /haus/"},"children":[{"id":"SitePage /d0f2ac4c-b6cf-4af4-8e16-d3edb0e3fcf2"},{"id":"SitePage /5d2fb733-fc69-4211-81cd-e0ed1ac5a4f5"},{"id":"SitePage /f622f7f1-cbbe-4909-9495-bf2180dff3ad"}],"slug":"haus1","template":"HousePage","pageMetadata":{"datePublished":"2021-09-16T01:42:53.260Z","title":"haus1","description":"","image":"","canonical":"","isBlogPost":false},"fields":"{\"houseimg\":{\"_type\":\"PlainField\",\"content\":{\"_type\":\"ImageBlock\",\"src\":\"https://cloudflare-ipfs.com/ipfs/Qma4bLLvKr8uonqT4F7SYdfypJemEHeKNaiEWHbsAdquBz\"}}}","images":[{"id":{"pageId":"SitePage /f0481534-5c1b-4ea1-b3af-da13bf105a63","fieldName":"houseimg"},"file___NODE":"57b046b6-9e22-5d95-bddd-e2a990a7b85d"}]}}},
-    "staticQueryHashes": ["2561576124","3160394115","3372958248","3832545140"]}

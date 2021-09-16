@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-lage-tsx",
     "path": "/lage/",
-    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /lage/","pageMetadata":{"title":"Lage","datePublished":"2021-09-16T01:42:53.260Z"},"fields":"{\"locationimage\":{\"_type\":\"PlainField\",\"content\":{\"_type\":\"ImageBlock\",\"src\":\"https://cloudflare-ipfs.com/ipfs/QmVnbbnvkR8mWxA2VQAVDWXSfSBHw6FS2aGkaRGZDgU96Q\"}},\"locationhead\":{\"_type\":\"PlainField\",\"content\":{\"_type\":\"TextBlock\",\"text\":\"<p>Die Lage</p>\"}}}","images":[{"id":{"pageId":"SitePage /lage/","fieldName":"locationimage"},"file___NODE":"af103758-7a68-5047-8d2f-4f0c1d783a3a"}]}}},
+    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /lage/","slug":"lage","pageMetadata":{"title":"Lage","datePublished":"2021-09-16T01:42:53.260Z"},"fields":"{\"locationimage\":{\"_type\":\"PlainField\",\"content\":{\"_type\":\"ImageBlock\",\"src\":\"https://cloudflare-ipfs.com/ipfs/QmVnbbnvkR8mWxA2VQAVDWXSfSBHw6FS2aGkaRGZDgU96Q\"}},\"locationhead\":{\"_type\":\"PlainField\",\"content\":{\"_type\":\"TextBlock\",\"text\":\"<p>Die Lage</p>\"}}}","images":[{"id":{"pageId":"SitePage /lage/","fieldName":"locationimage"},"file___NODE":"af103758-7a68-5047-8d2f-4f0c1d783a3a"}]}}},
     "staticQueryHashes": ["2561576124","3160394115","3372958248","3832545140"]}

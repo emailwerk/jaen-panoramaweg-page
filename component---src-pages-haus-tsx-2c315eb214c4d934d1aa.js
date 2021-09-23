@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkjaen_panoramaweg_page=self.webpackChunkjaen_panoramaweg_page||[]).push([[50],{56433:function(e,n,a){a.r(n);var t=a(57690),r=a(20119),u=a(52200),i=a(38037),o=a(67294),s=a(7611);n.default=function(){return(0,o.useEffect)((function(){return(0,i.c4)("/")}),[]),(0,s.jsx)(t.xu,{as:"section",id:"rootingpage",overflow:"hidden"},(0,s.jsx)(r.W,{marginTop:"45vh",centerContent:!0},(0,s.jsx)(u.x,null,"Sie werden auf die Hauptseite weitergeleitet.")))}}}]);
-//# sourceMappingURL=component---src-pages-haus-tsx-2c315eb214c4d934d1aa.js.map

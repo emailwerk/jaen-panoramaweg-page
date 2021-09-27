@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-pages-projekt-tsx",
     "path": "/projekt/",
     "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /projekt/","slug":"projekt","pageMetadata":{"title":"Projekt","datePublished":"2021-09-16T20:10:14.639Z"},"fields":"{\"immoimg\":{\"_type\":\"PlainField\",\"content\":{\"_type\":\"ImageBlock\",\"src\":\"https://cloudflare-ipfs.com/ipfs/QmdFdBepsqcYEZKXYKuzmtfw12MRN1ZfroCiRJRwpPLHw6\"}}}","images":[{"id":{"pageId":"SitePage /projekt/","fieldName":"immoimg"},"file___NODE":"204224c4-c283-5f9a-a9ed-e3f8db8fdf1e"}]}}},
-    "staticQueryHashes": ["2561576124","3160394115","3372958248","3832545140"]}
+    "staticQueryHashes": ["2561576124","3160394115","3372958248","3402799529","3832545140"]}

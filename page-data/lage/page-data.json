@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-pages-lage-tsx",
     "path": "/lage/",
     "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /lage/","slug":"lage","pageMetadata":{"title":"Lage","datePublished":"2021-09-16T20:10:14.639Z"},"fields":"{\"locationimage\":{\"_type\":\"PlainField\",\"content\":{\"_type\":\"ImageBlock\",\"src\":\"https://cloudflare-ipfs.com/ipfs/QmYFxsabzhYcofBvkwGhbWpDbNbV9U18TTjYjJ8Nuwyso5\"}}}","images":[{"id":{"pageId":"SitePage /lage/","fieldName":"locationimage"},"file___NODE":"4c0758b4-916c-5884-8eb6-19d50bcde63b"}]}}},
-    "staticQueryHashes": ["2561576124","3160394115","3372958248","3832545140"]}
+    "staticQueryHashes": ["2561576124","3160394115","3372958248","3402799529","3832545140"]}

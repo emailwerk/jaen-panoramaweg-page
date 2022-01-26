@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-house-page-index-tsx",
+    "path": "/haus/haus-süd/",
+    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /3e5a7f13-d48d-45e2-8e30-b78b9c67a69a","parent":{"id":"SitePage /haus/"},"children":[{"id":"SitePage /6a5a82a4-d6a6-4aeb-bb61-bea3731ae212"}],"slug":"haus-süd","template":"HousePage","pageMetadata":{"datePublished":"2022-01-26T14:36:59.620Z","title":"Haus Süd","description":"","image":"","canonical":"","isBlogPost":false},"fields":"{}","images":[],"deleted":true}}},
+    "staticQueryHashes": ["2561576124","3160394115","3402799529","4161552172"]}

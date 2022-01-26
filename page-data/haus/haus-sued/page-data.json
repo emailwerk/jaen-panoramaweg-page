@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-house-page-index-tsx",
+    "path": "/haus/haus-sued/",
+    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /23b5b96f-9d18-48c6-a10e-217988a731c6","parent":{"id":"SitePage /haus/"},"children":[{"id":"SitePage /51849c04-ccb7-4858-923a-e046ec61cb36"},{"id":"SitePage /6f127a4f-4d86-4fd7-b240-256c49d45590"},{"id":"SitePage /cd790b58-05a4-42a9-9332-6d24f574c8ac"},{"id":"SitePage /f5e17e73-edff-4403-af06-0df92f6b0a51"},{"id":"SitePage /46ba4af4-5a0b-4b17-8da1-c459dbd2e816"},{"id":"SitePage /1ebf0a51-8724-4c14-a808-e14e1be34938"},{"id":"SitePage /a973c0c9-5cbd-4a17-aad0-659054f8c91d"},{"id":"SitePage /28e8e257-a2bc-489b-9c58-f10f601cc0be"},{"id":"SitePage /415d23b8-ec64-4823-b154-7ef3d5bd1249"}],"slug":"haus-sued","template":"HousePage","pageMetadata":{"datePublished":"2022-01-26T14:36:59.620Z","title":"Haus Sued","description":"","image":"","canonical":"","isBlogPost":false},"fields":"{}","images":[]}}},
+    "staticQueryHashes": ["2561576124","3160394115","3402799529","4161552172"]}

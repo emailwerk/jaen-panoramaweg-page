@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-apartment-page-index-tsx",
+    "path": "/haus/top-1/top-1/top-1/",
+    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /4da4e30f-0506-4b1a-82de-9801c54f752c","parent":{"id":"SitePage /71d1e134-d652-427b-92f2-7ffb7ccaf91e"},"children":[],"slug":"top-1","template":"ApartmentPage","pageMetadata":{"datePublished":"2022-01-26T14:36:59.620Z","title":"Top 1","description":"","image":"","canonical":"","isBlogPost":false},"fields":"{}","images":[],"deleted":true}}},
+    "staticQueryHashes": ["2561576124","3160394115","3402799529","4161552172"]}

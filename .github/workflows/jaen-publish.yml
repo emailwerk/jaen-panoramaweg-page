@@ -59,7 +59,7 @@ jobs:
           git checkout main
 
           yarn install
-          npx jaen-pages build
+          npx jaen build
           yarn deploy
           # Git: add, commit, and push changes
           git add .

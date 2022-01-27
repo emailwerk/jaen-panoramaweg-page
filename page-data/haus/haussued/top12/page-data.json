@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-apartment-page-index-tsx",
     "path": "/haus/haussued/top12/",
-    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /5b94aece-38fa-44c1-8c3e-3bf30f0fe69a","parent":{"id":"SitePage /fa602010-e567-4415-a44b-533833163a85"},"children":[],"slug":"top12","template":"ApartmentPage","pageMetadata":{"datePublished":"2022-01-27T07:57:28.985Z","title":"Top 12","description":"","image":"","isBlogPost":false},"fields":"{}","images":[]}}},
+    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /5b94aece-38fa-44c1-8c3e-3bf30f0fe69a","parent":{"id":"SitePage /fa602010-e567-4415-a44b-533833163a85"},"children":[],"slug":"top12","template":"ApartmentPage","pageMetadata":{"datePublished":"2022-01-27T07:57:28.985Z","title":"Top 12","description":"","image":"https://osg.snek.at/storage/BQACAgQAAxkDAAIEtWHySA5a-eNnbjppSlpft08mtexoAAIOCwACzWSRU8XU5D5FFPmFIwQ","isBlogPost":false},"fields":"{}","images":[]}}},
     "staticQueryHashes": ["2561576124","3160394115","3402799529","4161552172"]}

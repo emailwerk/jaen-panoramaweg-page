@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-apartment-page-index-tsx",
+    "path": "/haus/haussued/top10/",
+    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /e2b2422f-0c61-423c-a179-67b0d59d09e0","parent":{"id":"SitePage /fa602010-e567-4415-a44b-533833163a85"},"children":[],"slug":"top10","template":"ApartmentPage","pageMetadata":{"datePublished":"2022-01-27T07:08:13.261Z","title":"Top10","description":"","image":"https://osg.snek.at/storage/BQACAgQAAxkDAAIEomHyRKnnAzmFsL8OIO8qGNemICZvAAL5CgACzWSRU-gtubbFx1heIwQ","isBlogPost":false},"fields":"{}","images":[]}}},
+    "staticQueryHashes": ["2561576124","3160394115","3402799529","4161552172"]}

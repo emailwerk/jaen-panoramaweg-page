@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-house-page-index-tsx",
+    "path": "/haus/haussued/",
+    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /fa602010-e567-4415-a44b-533833163a85","parent":{"id":"SitePage /haus/"},"children":[{"id":"SitePage /e2b2422f-0c61-423c-a179-67b0d59d09e0"}],"slug":"haussued","template":"HousePage","pageMetadata":{"datePublished":"2022-01-27T07:08:13.261Z","title":"HausSued","description":"","image":"","canonical":"","isBlogPost":false},"fields":"{}","images":[]}}},
+    "staticQueryHashes": ["2561576124","3160394115","3402799529","4161552172"]}

@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-house-page-index-tsx",
-    "path": "/haus/top-1/top-1/",
-    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /71d1e134-d652-427b-92f2-7ffb7ccaf91e","parent":{"id":"SitePage /46a7852c-3da2-4e1d-aa8d-6413ef94b887"},"children":[{"id":"SitePage /4da4e30f-0506-4b1a-82de-9801c54f752c"}],"slug":"top-1","template":"HousePage","pageMetadata":{"datePublished":"2022-01-26T14:36:59.620Z","title":"Top 1","description":"","image":"","canonical":"","isBlogPost":false},"fields":"{}","images":[],"deleted":true}}},
-    "staticQueryHashes": ["2561576124","3160394115","3402799529","4161552172"]}

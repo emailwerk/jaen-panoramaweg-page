@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-haus-tsx",
     "path": "/haus/",
-    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /haus/","slug":"haus","children":[{"id":"SitePage /46a7852c-3da2-4e1d-aa8d-6413ef94b887"},{"id":"SitePage /3e5a7f13-d48d-45e2-8e30-b78b9c67a69a"},{"id":"SitePage /23b5b96f-9d18-48c6-a10e-217988a731c6"}],"pageMetadata":{"title":"Haus Nord","datePublished":"2022-01-26T12:50:50.915Z","description":null,"image":null,"isBlogPost":null},"images":[]}}},
+    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /haus/","slug":"haus","pageMetadata":{"title":"Haus","datePublished":"2022-01-27T05:54:14.145Z"},"images":[]}}},
     "staticQueryHashes": ["2561576124","3160394115","3402799529","4161552172"]}

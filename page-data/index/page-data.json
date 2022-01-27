@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-index-tsx",
     "path": "/",
-    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /","pageMetadata":{"title":"Index","datePublished":"2022-01-27T06:41:24.754Z"},"fields":"{\"imagetopimg1\":{\"_type\":\"PlainField\",\"content\":{\"_type\":\"ImageBlock\",\"src\":\"https://osg.snek.at/storage/BQACAgQAAxkDAAIESGHyNp7V7goKZjNRq5jcrCJLBXvKAAKeCgACzWSRU3tRdqs1vNZPIwQ\"}}}","images":[{"id":{"pageId":"SitePage /","fieldName":"imagetopimg1"},"file___NODE":"285bd3e8-7b39-5341-b8f7-d3970e65cbaa"}]}}},
+    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /","pageMetadata":{"title":"Index","datePublished":"2022-01-27T06:36:55.518Z"},"fields":"{\"imagetopimg1\":{\"_type\":\"PlainField\",\"content\":{\"_type\":\"ImageBlock\",\"src\":\"https://osg.snek.at/storage/BQACAgQAAxkDAAIESGHyNp7V7goKZjNRq5jcrCJLBXvKAAKeCgACzWSRU3tRdqs1vNZPIwQ\"}}}","images":[{"id":{"pageId":"SitePage /","fieldName":"imagetopimg1"},"file___NODE":"285bd3e8-7b39-5341-b8f7-d3970e65cbaa"}]}}},
     "staticQueryHashes": ["2561576124","3160394115","3402799529","4161552172"]}

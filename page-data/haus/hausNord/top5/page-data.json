@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-apartment-page-index-tsx",
+    "path": "/haus/hausNord/top5/",
+    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /f47f50ad-f404-42c4-a03b-8e30a0116579","parent":{"id":"SitePage /a0510171-0a2e-4c92-aa0e-eadf3c74ac91"},"children":[],"slug":"top5","template":"ApartmentPage","pageMetadata":{"datePublished":"2022-01-27T06:41:24.754Z","title":"Top5","description":"","image":"https://osg.snek.at/storage/BQACAgQAAxkDAAIEYmHyPVpMsnIP0viuDUzUX7D54yywAAK5CgACzWSRU4vb-lTAm0hjIwQ","isBlogPost":false},"fields":"{}","images":[]}}},
+    "staticQueryHashes": ["2561576124","3160394115","3402799529","4161552172"]}

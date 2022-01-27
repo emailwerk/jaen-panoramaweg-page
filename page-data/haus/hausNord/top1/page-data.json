@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-apartment-page-index-tsx",
     "path": "/haus/hausNord/top1/",
-    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /c0446b4f-05b0-4609-a08a-844239a48a8e","parent":{"id":"SitePage /a0510171-0a2e-4c92-aa0e-eadf3c74ac91"},"children":[],"slug":"top1","template":"ApartmentPage","pageMetadata":{"datePublished":"2022-01-27T06:41:24.754Z","title":"Top1","description":"","image":"https://osg.snek.at/storage/BQACAgQAAxkDAAIEWmHyPUZSsEeaSBGkTOGzrcbJXdREAAKxCgACzWSRUyvMTyy1v_ySIwQ","isBlogPost":false},"fields":"{}","images":[]}}},
+    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /c0446b4f-05b0-4609-a08a-844239a48a8e","parent":{"id":"SitePage /a0510171-0a2e-4c92-aa0e-eadf3c74ac91"},"children":[],"slug":"top1","template":"ApartmentPage","pageMetadata":{"datePublished":"2022-01-27T06:41:24.754Z","title":"Top 1","description":"","image":"https://osg.snek.at/storage/BQACAgQAAxkDAAIEWmHyPUZSsEeaSBGkTOGzrcbJXdREAAKxCgACzWSRUyvMTyy1v_ySIwQ","isBlogPost":false},"fields":"{}","images":[]}}},
     "staticQueryHashes": ["2561576124","3160394115","3402799529","4161552172"]}

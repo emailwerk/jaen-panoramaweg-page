@@ -58,13 +58,6 @@ jobs:
       - name: Yarn Install
         run: yarn install --pure-lockfile
 
-      # https://github.com/actions/checkout
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
-        with:
-          # Relative path under $GITHUB_WORKSPACE to place the repository
-          path: '.'
-
       # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsid
       - name: Configure GitHub Authentication 🔧
         # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsrun

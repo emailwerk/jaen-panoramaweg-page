@@ -148,6 +148,4 @@ jobs:
           GATSBY_GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
         run: |
           git checkout main
-
-          yarn install --pure-lockfile
           yarn deploy:incremental

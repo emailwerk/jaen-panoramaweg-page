@@ -48,6 +48,20 @@ jobs:
             ${{ runner.os }}-yarn-
 
       # https://github.com/marketplace/actions/cache
+      - name: Gatsby Cache Folder
+        uses: actions/cache@v3
+        with:
+          key: gatsby-cache-folder
+          path: .cache
+
+      # https://github.com/marketplace/actions/cache
+      - name: Gatsby Public Folder
+        uses: actions/cache@v3
+        with:
+          key: gatsby-public-folder
+          path: public
+
+      # https://github.com/marketplace/actions/cache
       - name: Yarn Cache Node
         uses: actions/cache@v3
         with:
@@ -86,3 +100,5 @@ jobs:
           git add .
           git commit -m "jaen-publish(jaen-data.json): update jaen-data" || echo "Nothing to commit, working tree clean."
           GIT_TRACE=1 git push -f --verbose origin main
+
+          yarn deploy:incremental

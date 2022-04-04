@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-apartment-page-index-tsx",
     "path": "/haus/hausSued/top15/top16/top-18/",
-    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /9b2af84d-55ac-43d0-bc95-c44d42dcb69f","parent":{"id":"SitePage /26ada1fa-5a75-47e5-9585-99e512af5ca3"},"children":[{"id":"SitePage /3162de32-510e-42a4-8363-5c50c0751f90"}],"slug":"top-18","template":"ApartmentPage","pageMetadata":{"datePublished":"2022-04-04T14:08:12.908Z","title":"Top 18","description":"","image":"","canonical":"","isBlogPost":false},"fields":"{}","images":[],"deleted":true}}},
+    "result": {"pageContext":{"jaenPageContext":{"id":"SitePage /9b2af84d-55ac-43d0-bc95-c44d42dcb69f","parent":{"id":"SitePage /26ada1fa-5a75-47e5-9585-99e512af5ca3"},"children":[{"id":"SitePage /3162de32-510e-42a4-8363-5c50c0751f90"}],"slug":"top-18","template":"ApartmentPage","pageMetadata":{"datePublished":"2022-04-04T14:12:36.107Z","title":"Top 18","description":"","image":"","canonical":"","isBlogPost":false},"fields":"{}","images":[],"deleted":true}}},
     "staticQueryHashes": ["2561576124","3160394115","3402799529","4161552172"]}

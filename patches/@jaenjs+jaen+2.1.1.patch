@@ -1,0 +1,267 @@
+diff --git a/node_modules/@jaenjs/jaen/dist/storage.js b/node_modules/@jaenjs/jaen/dist/storage.js
+index 60c91b7..67f921a 100644
+--- a/node_modules/@jaenjs/jaen/dist/storage.js
++++ b/node_modules/@jaenjs/jaen/dist/storage.js
+@@ -63,35 +63,34 @@ exports.upload = upload;
+ 
+ var nodejsSafeJsonUpload = /*#__PURE__*/function () {
+   var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee2(payload) {
+-    var FormData, formData, url, resp, json;
++    var FormData, url, form;
+     return _regenerator["default"].wrap(function _callee2$(_context2) {
+       while (1) {
+         switch (_context2.prev = _context2.next) {
+           case 0:
+             FormData = require('form-data');
+-            formData = new FormData();
+-            formData.append('file', payload, {
+-              knownLength: payload.length,
+-              filename: 'jaen-index.json',
+-              contentType: 'application/json'
+-            });
+             url = 'https://osg.snek.at/storage';
+-            _context2.next = 6;
+-            return fetch(url, {
+-              body: formData,
+-              method: 'POST'
++            form = new FormData({
++              maxDataSize: 20971520
+             });
++            form.append('file', payload, {
++              filename: 'jaen-index.json'
++            }); // Here we create and await our promise:
++
++            return _context2.abrupt("return", new Promise(function (resolve, reject) {
++              form.submit(url, function (err, res) {
++                res.setEncoding('utf8');
++                res.on('data', function (chunk) {
++                  var json = JSON.parse(chunk);
++                  resolve("".concat(url, "/").concat(json.file_id));
++                });
++                res.on('error', function (err) {
++                  reject(err);
++                });
++              });
++            }));
+ 
+-          case 6:
+-            resp = _context2.sent;
+-            _context2.next = 9;
+-            return resp.json();
+-
+-          case 9:
+-            json = _context2.sent;
+-            return _context2.abrupt("return", "".concat(url, "/").concat(json.file_id));
+-
+-          case 11:
++          case 5:
+           case "end":
+             return _context2.stop();
+         }
+diff --git a/node_modules/@jaenjs/jaen/gatsby-browser.js b/node_modules/@jaenjs/jaen/gatsby-browser.js
+index c96b130..cdba2a7 100644
+--- a/node_modules/@jaenjs/jaen/gatsby-browser.js
++++ b/node_modules/@jaenjs/jaen/gatsby-browser.js
+@@ -1 +1,4 @@
+-module.exports = require('./src/gatsby-wrapper')
++const wrapper = require('./src/gatsby-wrapper')
++
++exports.wrapRootElement = wrapper.wrapRootElement
++exports.wrapPageElement = wrapper.wrapPageElement
+diff --git a/node_modules/@jaenjs/jaen/gatsby-node.js b/node_modules/@jaenjs/jaen/gatsby-node.js
+index 29ba981..e6b56c1 100644
+--- a/node_modules/@jaenjs/jaen/gatsby-node.js
++++ b/node_modules/@jaenjs/jaen/gatsby-node.js
+@@ -50,6 +50,7 @@ exports.createSchemaCustomization = ({actions}) => {
+       parent: JaenPageId
+       children: [JaenPageId]
+       fields: JSON
++      deleted: Boolean
+     }
+ 
+     type JaenPageId {
+@@ -132,7 +133,8 @@ exports.createPages = async (
+               ...page.pageMetadata
+             },
+             fields: JSON.stringify(fields),
+-            images
++            images,
++            deleted: page.deleted
+           }
+         }
+       })
+@@ -147,7 +149,8 @@ exports.createPages = async (
+           datePublished: createdAt,
+           ...page.pageMetadata
+         },
+-        fields
++        fields,
++        deleted: page.deleted
+       })
+     }
+   }
+@@ -213,7 +216,8 @@ exports.onCreatePage = async ({
+             ...cachedJaenPage?.pageMetadata
+           },
+           images,
+-          fields: JSON.stringify(fields)
++          fields: JSON.stringify(fields),
++          deleted: page.deleted
+         }
+       }
+     }
+diff --git a/node_modules/@jaenjs/jaen/gatsby-ssr.js b/node_modules/@jaenjs/jaen/gatsby-ssr.js
+index c96b130..cdba2a7 100644
+--- a/node_modules/@jaenjs/jaen/gatsby-ssr.js
++++ b/node_modules/@jaenjs/jaen/gatsby-ssr.js
+@@ -1 +1,4 @@
+-module.exports = require('./src/gatsby-wrapper')
++const wrapper = require('./src/gatsby-wrapper')
++
++exports.wrapRootElement = wrapper.wrapRootElement
++exports.wrapPageElement = wrapper.wrapPageElement
+diff --git a/node_modules/@jaenjs/jaen/src/components/molecules/PageTree/treeconverter.ts b/node_modules/@jaenjs/jaen/src/components/molecules/PageTree/treeconverter.ts
+index 781e813..45df527 100644
+--- a/node_modules/@jaenjs/jaen/src/components/molecules/PageTree/treeconverter.ts
++++ b/node_modules/@jaenjs/jaen/src/components/molecules/PageTree/treeconverter.ts
+@@ -27,7 +27,9 @@ export const TreeConverter = (items: Items): TreeData => {
+     while (parent) {
+       yield parent
+ 
+-      parent = allItems[parent].parent
++      console.log("FUCUAHCKASJHCSA",allItems, parent)
++
++      parent = allItems[parent]?.parent
+     }
+   }
+ 
+@@ -44,6 +46,9 @@ export const TreeConverter = (items: Items): TreeData => {
+       const parentIter = genItemParent(items, id)
+       const isExpanded = !nth(parentIter, 3)
+ 
++      // make sure all children are items
++      item.children = item.children.filter(id => id in items)
++
+       yield {
+         ...item,
+         id,
+@@ -58,6 +63,8 @@ export const TreeConverter = (items: Items): TreeData => {
+     tree.items[item.id] = item
+   }
+ 
++  console.log("TREE", tree)
++
+   return tree
+ }
+ 
+diff --git a/node_modules/@jaenjs/jaen/src/contexts/cms.tsx b/node_modules/@jaenjs/jaen/src/contexts/cms.tsx
+index bfb46c7..d4ec198 100644
+--- a/node_modules/@jaenjs/jaen/src/contexts/cms.tsx
++++ b/node_modules/@jaenjs/jaen/src/contexts/cms.tsx
+@@ -67,7 +67,7 @@ export const usePage = (id: string): ResolvedPageType => {
+     .map(child => ({
+       page: nodes[child.id]
+     }))
+-    .filter(e => !e.page.deleted)
++    .filter(e => !e?.page?.deleted)
+ 
+   return resolvedPage
+ }
+@@ -165,7 +165,9 @@ export const CMSProvider: React.FC<CMSProviderType> = ({
+               }
+             }
+           }
+-          sitePageRootIds: allSitePage(filter: {parent: {id: {eq: null}}}) {
++          sitePageRootIds: allSitePage(
++            filter: {context: {jaenPageContext: {parent: {id: {eq: null}}, deleted: {eq: null}}}}
++          ) {
+             distinct(field: id)
+           }
+           allFile {
+@@ -183,6 +185,7 @@ export const CMSProvider: React.FC<CMSProviderType> = ({
+                   id
+                   slug
+                   template
++                  deleted
+                   parent {
+                     id
+                   }
+@@ -243,10 +246,30 @@ export const CMSProvider: React.FC<CMSProviderType> = ({
+             template: jaenPageContext?.template,
+             fields: JSON.parse(jaenPageContext?.fields || '{}'),
+             pageMetadata: jaenPageContext?.pageMetadata,
+-            images: jaenPageContext?.images
++            images: jaenPageContext?.images,
++            deleted: jaenPageContext?.deleted
+           }
+         }
+ 
++        console.log(Object.values(site.allSitePage.nodes))
++
++        /**
++         * 
++        
++        for(const node of Object.values(site.allSitePage.nodes)) {
++          console.log(node)
++          if(node.deleted){
++            if(node.parent?.id) {
++              if(site.allSitePage.nodes[node.parent.id]) {
++                site.allSitePage.nodes[node.parent.id].children = site.allSitePage.nodes[node.parent.id].children.filter(child => child.id !== node.id)
++              }
++            }
++            delete site.allSitePage.nodes[node.id]
++          }
++        }
++
++        */
++
+         return (
+           <CMSContext.Provider
+             value={{
+diff --git a/node_modules/@jaenjs/jaen/src/storage.ts b/node_modules/@jaenjs/jaen/src/storage.ts
+index dbb031e..a3343a3 100644
+--- a/node_modules/@jaenjs/jaen/src/storage.ts
++++ b/node_modules/@jaenjs/jaen/src/storage.ts
+@@ -30,23 +30,30 @@ export const upload = async (payload: object | Blob | File) => {
+  */
+ export const nodejsSafeJsonUpload = async (payload: string) => {
+   const FormData = require('form-data')
++  const url = 'https://osg.snek.at/storage'
+ 
+-  const formData = new FormData()
+ 
+-  formData.append('file', payload, {
+-    knownLength: payload.length,
+-    filename: 'jaen-index.json',
+-    contentType: 'application/json'
++  const form = new FormData({
++    maxDataSize: 20971520
+   })
+ 
+-  const url = 'https://osg.snek.at/storage'
+-
+-  const resp = await fetch(url, {
+-    body: formData,
+-    method: 'POST'
++  form.append('file', payload, {
++    filename: 'jaen-index.json'
+   })
+ 
+-  const json = await resp.json()
++  // Here we create and await our promise:
++  return new Promise((resolve, reject) => {
++    form.submit(url, (err, res) => {
++      res.setEncoding('utf8')
++      res.on('data', chunk => {
++        const json = JSON.parse(chunk)
+ 
+-  return `${url}/${json.file_id}`
++        resolve(`${url}/${json.file_id}`)
++      })
++
++      res.on('error', err => {
++        reject(err)
++      })
++    })
++  })
+ }
